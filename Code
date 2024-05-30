@@ -1,0 +1,68 @@
+class Vehicle:
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+
+    def display_info(self):
+        print(f"Vehicle Info: {self.year} {self.make} {self.model}")
+
+    def start_engine(self):
+        print("Engine started!")
+
+    def stop_engine(self):
+        print("Engine stopped!")
+
+
+class Car(Vehicle):
+    def __init__(self, make, model, year, num_doors):
+        super().__init__(make, model, year)
+        self.num_doors = num_doors
+
+    def honk(self):
+        print("Beep beep!")
+
+
+class Motorcycle(Vehicle):
+    def __init__(self, make, model, year, num_wheels):
+        super().__init__(make, model, year)
+        self.num_wheels = num_wheels
+
+    def wheelie(self):
+        print("Performing a wheelie!")
+
+
+class Truck(Vehicle):
+    def __init__(self, make, model, year, cargo_capacity):
+        super().__init__(make, model, year)
+        self.cargo_capacity = cargo_capacity
+
+    def load_cargo(self):
+        print("Loading cargo...")
+
+    def unload_cargo(self):
+        print("Unloading cargo...")
+
+
+# Creating objects
+car1 = Car("Toyota", "Camry", 2019, 4)
+car2 = Car("Honda", "Accord", 2020, 4)
+
+motorcycle1 = Motorcycle("Harley-Davidson", "Street Glide", 2021, 2)
+motorcycle2 = Motorcycle("Ducati", "Monster", 2022, 2)
+
+truck1 = Truck("Ford", "F-150", 2020, "1000 kg")
+truck2 = Truck("Chevrolet", "Silverado", 2021, "1500 kg")
+
+# Performing actions
+car1.start_engine()
+motorcycle2.wheelie()
+truck1.load_cargo()
+
+# Displaying information
+car1.display_info()
+car2.display_info()
+motorcycle1.display_info()
+motorcycle2.display_info()
+truck1.display_info()
+truck2.display_info()
